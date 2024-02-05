@@ -43,7 +43,7 @@ def newController():
         "model": None
     }
     control["model"] = model.newCatalog()
-    return control
+    return control 
 
 
 # Funciones para la carga de datos
