@@ -77,7 +77,7 @@ def addBookTags(catalog, booktagsfile):
     # TODO: Mods de Est-1, Est-2 y Est-3 en el Lab 2
     catalog["book_tags"] = lt.newList(datastructure="ARRAY_LIST", 
                                       filename=booktagsfile) 
-    return catalog 
+    return catalog  
 
 
 def addTag(catalog, tag):
