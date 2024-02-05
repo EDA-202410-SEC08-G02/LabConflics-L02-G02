@@ -29,6 +29,7 @@ import controller
 assert cf
 
 
+
 """
 La vista se encarga de la interacción con el usuario
 Presenta el menu de opciones  y  por cada seleccion
@@ -59,7 +60,7 @@ def loadBooks(control):
     Carga los libros
     """
     books = controller.loadBooks(control,
-                                 "GoodReads/books-small.csv")
+                                 "GoodReads/books.csv")
     return books
 
 
@@ -76,8 +77,10 @@ def loadBooksTags(control):
     """
     Cargar los Tags de libros
     """
+    booktags = controller.loadBooksTags(control,"GoodReads/book_tags.csv")
+    return booktags
     
-    pass
+    
 
 
 def firstBook(control):
@@ -85,7 +88,9 @@ def firstBook(control):
     Devuelve el primer libro del catalogo
     """
     # TODO: Mods de Est-1 en el Lab 2
-    pass
+    first = controller.firstBook(control)
+    return first
+    
 
 
 def lastBook(control):
@@ -93,7 +98,10 @@ def lastBook(control):
     """
     Devuelve el último libro cargado
     """
-    pass
+    last = controller.lastBook(control)
+    return last
+     
+    
 
 
 # Se crea el controlador asociado a la vista
@@ -116,10 +124,14 @@ if __name__ == "__main__":
             print("Total de libros cargados: " + str(books) + "\n")
 
             # TODO: Mods de Est-1 en el Lab 2
-            first = None
+            first = firstBook(control)
+            print("Primer libro cargado:\n" + str(first) + "\n")
+            
 
             # TODO: Mods de Est-2 en el Lab 2
-            last = None
+            last = lastBook(control)
+            print("Último libro cargado:\n" + str(last) + "\n")
+            
 
         elif int(inputs[0]) == 2:
             print("Cargando información de tags....")
